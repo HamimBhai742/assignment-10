@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const NavBar = () => {
+    const { user, LogOut } = useContext(AuthContext)
+    const handelLogOutBtn = () => {
+        console.log('click');
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to logout!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Logout!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Logout!",
+                text: "You have successfuly logout.",
+                icon: "success"
+              });
+              LogOut()
+            }
+          });
+       
+            // .then(res => {
+            //     console.log(res);
+            // })
+            // .catch(error => {
+            //     console.log(error);
+            // })
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -23,21 +54,23 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className='flex items-center'>
-                        <img src="/Screenshot_60-removebg-preview.png" alt=""  className='w-16'/>
+                        <img src="/Screenshot_60-removebg-preview.png" alt="" className='w-16' />
                         <a className="btn btn-ghost text-4xl font-rancho">Artisanal Fabrics</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 gap-5 text-lg items-center">
+                    <ul className="menu menu-horizontal px-1 gap-5 text-lg font-raleway font-medium items-center text-[#131313CC]">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/a'>Home</NavLink>
-                        <NavLink to='/b'>Home</NavLink>
+                        <NavLink to='/addcraft'>Add Craft Item</NavLink>
                         <NavLink to='/c'>Home</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end gap-3 font-inter text-lg">
-                    <Link to='/login' className="btn bg-[#23BE0A] text-white">Login</Link>
-                    <Link to='/register' className="btn bg-[#59C6D2] text-white">Register</Link>
+                    {user ? <img className='w-16 ' src="/public/Screenshot_60-removebg-preview.png" alt="" /> : <Link to='/register' className="btn bg-[#59C6D2] text-white">Register</Link>}
+                    {user ? <button onClick={handelLogOutBtn} className="btn bg-[#23BE0A] text-white">Logout</button> : <Link to='/login' className="btn bg-[#23BE0A] text-white">Login</Link>}
+
+
                 </div>
             </div>
         </div>

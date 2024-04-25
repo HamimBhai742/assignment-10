@@ -1,15 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Login = () => {
+    const { LoginUser, user } = useContext(AuthContext)
+    console.log(user);
+    const handelLoginBtn = e => {
+        e.preventDefault()
+        const form = e.target
+        const email = form.email.value
+        const password = form.password.value
+        LoginUser(email, password)
+            .then(res => {
+                console.log(res.user);
+                Swal.fire({
+                    title: "Login!",
+                    text: "You have successfully login!",
+                    icon: "success"
+                });
+            })
+            .catch(error => {
+                console.log(error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Incorrect your password or email!",
+                });
+            })
+    }
     return (
         <div>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#328EFF26] mx-auto font-raleway text-gray-800">
                 <h1 className="text-5xl font-bold text-center">Login Now!</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handelLoginBtn} className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="Email" className="block font-semibold text-lg">Email</label>
-                        <input type="email" name="email" id="Email" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <input type="email" name="email" id="Email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block font-semibold text-lg">Password</label>
