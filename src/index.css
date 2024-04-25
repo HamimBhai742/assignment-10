@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.font-work-sans {
+  font-family: "Work Sans", sans-serif;
+}
+
+.font-rancho {
+  font-family: "Rancho", cursive;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.active {
+  background: #328EFF26;
+  border: 2px solid #328EFF;
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: #328EFF;
+  font-weight: 600;
+}

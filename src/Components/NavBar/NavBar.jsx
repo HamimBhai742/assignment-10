@@ -24,20 +24,20 @@ const NavBar = () => {
                     </div>
                     <div className='flex items-center'>
                         <img src="/Screenshot_60-removebg-preview.png" alt=""  className='w-16'/>
-                        <a className="btn btn-ghost text-4xl">Artisanal Fabrics</a>
+                        <a className="btn btn-ghost text-4xl font-rancho">Artisanal Fabrics</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 gap-5">
+                    <ul className="menu menu-horizontal px-1 gap-5 text-lg items-center">
                         <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/'>Home</NavLink>
+                        <NavLink to='/a'>Home</NavLink>
+                        <NavLink to='/b'>Home</NavLink>
+                        <NavLink to='/c'>Home</NavLink>
                     </ul>
                 </div>
-                <div className="navbar-end gap-3">
-                    <Link to='/' className="btn">Login</Link>
-                    <Link to='/' className="btn">Register</Link>
+                <div className="navbar-end gap-3 font-inter text-lg">
+                    <Link to='/login' className="btn bg-[#23BE0A] text-white">Login</Link>
+                    <Link to='/register' className="btn bg-[#59C6D2] text-white">Register</Link>
                 </div>
             </div>
         </div>
