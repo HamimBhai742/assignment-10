@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const { creatNewUser } = useContext(AuthContext)
@@ -15,6 +16,9 @@ const Register = () => {
         console.log(name, email, password, photo);
         creatNewUser(email, password)
             .then(res => {
+                updateProfile(res.user,{
+                    displayName:name,photoURL:photo
+                })
                 Swal.fire({
                     title: "Register!",
                     text: "You have successfully register!",

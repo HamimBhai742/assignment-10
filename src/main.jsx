@@ -11,6 +11,7 @@ import Register from './Components/Pages/Register/Register';
 import Login from './Components/Pages/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import AddCraft from './Components/Pages/AddCraft/AddCraft';
+import All_Art from './Components/Pages/All_Art_and_Craft/All_Art';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
       {
         path:'/addcraft',
         element:<AddCraft></AddCraft>
+      },
+      {
+        path:'/allart',
+        element:<All_Art></All_Art>
+      },
+      {
+        path:'/myart',
+        element:<All_Art></All_Art>
       }
     ]
   },

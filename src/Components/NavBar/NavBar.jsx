@@ -61,9 +61,9 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-5 text-lg font-raleway font-medium items-center text-[#131313CC]">
                         <NavLink to='/'>Home</NavLink>
-                        <NavLink to='/a'>Home</NavLink>
+                        <NavLink to='/allart'>All Art & craft Items</NavLink>
                         <NavLink to='/addcraft'>Add Craft Item</NavLink>
-                        <NavLink to='/c'>Home</NavLink>
+                        <NavLink to='/myart'>My Art & Craft List</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end gap-3 font-inter text-lg">
