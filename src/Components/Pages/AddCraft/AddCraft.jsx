@@ -47,26 +47,10 @@ const AddCraft = () => {
                                 <label htmlFor="lastname" className="text-xl font-semibold">User Email</label>
                                 <input id="lastname" type="text" placeholder="Enter coffee details" className="w-full pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='details' />
                             </div>
-                            {/* <div className="col-span-full sm:col-span-3">
-                        <label htmlFor="email" className="text-sm">Email</label>
-                        <input id="email" type="email" placeholder="Email" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
-                    </div> */}
                             <div className="col-span-full">
                                 <label htmlFor="address" className="text-xl font-semibold">Photo</label>
                                 <input id="address" type="text" placeholder="Enter photo URL" className="w-full h-12   pl-3 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='photo' />
                             </div>
-                            {/* <div className="col-span-full sm:col-span-2">
-                        <label htmlFor="city" className="text-sm">City</label>
-                        <input id="city" type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
-                    </div>
-                    <div className="col-span-full sm:col-span-2">
-                        <label htmlFor="state" className="text-sm">State / Province</label>
-                        <input id="state" type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
-                    </div>
-                    <div className="col-span-full sm:col-span-2">
-                        <label htmlFor="zip" className="text-sm">ZIP / Postal</label>
-                        <input id="zip" type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
-                    </div> */}
                             <div className="col-span-full mt-3">
                                 <input id="address" type="submit" value="Add Cofffe" className="w-full text-2xl font-rachno h-12 btn bg-[#328EFF] border-2 border-[#331A15]" />
                             </div>
