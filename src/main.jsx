@@ -12,11 +12,15 @@ import Login from './Components/Pages/Login/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import AddCraft from './Components/Pages/AddCraft/AddCraft';
 import All_Art from './Components/Pages/All_Art_and_Craft/All_Art';
+import MyCraft from './Components/Pages/MyCraft/MyCraft';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Error from './Components/Pages/Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',
@@ -40,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/myart',
-        element:<All_Art></All_Art>
+        element:<PrivateRoute><MyCraft></MyCraft></PrivateRoute>
       }
     ]
   },
