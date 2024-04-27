@@ -1,6 +1,10 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import Swal from 'sweetalert2'
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 const AddCraft = () => {
+    const {user}=useContext(AuthContext)
+    // console.log(user);
+    // console.log(user.email);
     const handelCraftAddBtn = (e) => {
         e.preventDefault()
         const form = e.target
@@ -13,11 +17,30 @@ const AddCraft = () => {
         const description = form.description.value
         const time = form.time.value
         const rating = form.rating.value
-        const photo = form.rating.value
+        const photo = form.photo.value
         const customization = form.art.value
         const stockStatus = form.stock.value
-        const addItem={name,email,itemName,subcategoryName,price,description,time,rating,photo,customization,stockStatus}
+        const addItem = { name, email, itemName, subcategoryName, price, description, time, rating, photo, customization, stockStatus }
         console.log(addItem);
+        fetch('http://localhost:5000/addcraft', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Your craft item added successfully!",
+                        icon: "success"
+                    });
+                    form.reset()
+                }
+            })
     }
     return (
         <section className='max-w-[1170px] mx-auto  my-8'>
@@ -33,11 +56,11 @@ const AddCraft = () => {
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 mt-5 font-raleway">
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="firstname" className="text-xl font-semibold">Name</label>
-                                <input id="firstname" type="text" placeholder="Enter your name" className="w-full pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='name' />
+                                <input id="firstname" defaultValue={user?.displayName}  type="text" disabled placeholder="Enter your name" className="w-full border-2 border-gray-500 pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='name' />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="lastname" className="text-xl font-semibold">Email</label>
-                                <input id="lastname" type="email" placeholder="Enter your email" className="w-full pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='email' />
+                                <input id="lastname" defaultValue={user?.email} disabled type="email" placeholder="Enter your email" className="w-full border-2 border-gray-500 pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='email' />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="firstname" className="text-xl font-semibold">Item Name</label>

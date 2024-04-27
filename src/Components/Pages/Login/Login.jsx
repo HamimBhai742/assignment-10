@@ -19,6 +19,7 @@ const Login = () => {
                     text: "You have successfully login!",
                     icon: "success"
                 });
+                form.reset()
             })
             .catch(error => {
                 console.log(error);
@@ -27,6 +28,7 @@ const Login = () => {
                     title: "Oops...",
                     text: "Incorrect your password or email!",
                 });
+
             })
     }
     const { GoogleLogin, gitHubLoginLogin } = useContext(AuthContext)

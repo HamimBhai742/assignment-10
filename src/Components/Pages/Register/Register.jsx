@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const { creatNewUser } = useContext(AuthContext)
+    const [error, setError] = useState('')
     const handelRegisterBtn = (e) => {
         e.preventDefault()
         const form = e.target
@@ -14,18 +15,26 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
         console.log(name, email, password, photo);
+        setError('')
+        if (password.length < 6) {
+            return setError('Password minimum 6 charecter')
+        }
+        else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+            return setError('Provide a strong password')
+        }
         creatNewUser(email, password)
             .then(res => {
-                updateProfile(res.user,{
-                    displayName:name,photoURL:photo
+                updateProfile(res.user, {
+                    displayName: name, photoURL: photo
                 })
                 Swal.fire({
                     title: "Register!",
                     text: "You have successfully register!",
                     icon: "success"
-                  });
+                });
+                form.reset()
             })
-            .catch(error =>{
+            .catch(error => {
                 console.log(error);
             })
     }
@@ -62,6 +71,7 @@ const Register = () => {
                                 </label>
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
                             </div>
+                            <p className="text-[red]">{error}</p>
                             <div className="form-control mt-6">
                                 <input type="submit" value='Register' className="btn bg-violet-600 text-white text-xl font-semibold"></input>
                             </div>

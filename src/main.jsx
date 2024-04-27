@@ -15,16 +15,19 @@ import All_Art from './Components/Pages/All_Art_and_Craft/All_Art';
 import MyCraft from './Components/Pages/MyCraft/MyCraft';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Error from './Components/Pages/Error/Error';
+import ViewDetails from './Components/Pages/Viewdetails/ViewDetails';
+import UpdateCraft from './Components/Pages/Update/UpdateCraft';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/addcraft')
       },
       {
         path: '/register',
@@ -35,16 +38,28 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path:'/addcraft',
-        element:<AddCraft></AddCraft>
+        path: '/addcraft',
+        element: <AddCraft></AddCraft>
       },
       {
-        path:'/allart',
-        element:<All_Art></All_Art>
+        path: '/allart',
+        element: <All_Art></All_Art>,
+        loader: () => fetch('http://localhost:5000/addcraft')
       },
       {
-        path:'/myart',
-        element:<PrivateRoute><MyCraft></MyCraft></PrivateRoute>
+        path: '/myart',
+        element: <PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/addcraft')
+      },
+      {
+        path: '/viewdetails/:id',
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
+      },
+      {
+        path:'/updatecraft/:id',
+        element:<UpdateCraft></UpdateCraft>,
+        loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
       }
     ]
   },
