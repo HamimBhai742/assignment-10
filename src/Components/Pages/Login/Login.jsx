@@ -59,9 +59,9 @@ const Login = () => {
         console.log(showPass);
     }
     return (
-        <div>
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#328EFF26] mx-auto font-raleway text-gray-800">
-                <h1 className="text-5xl font-bold text-center">Login Now!</h1>
+        <div className='max-sm:mx-3'>
+            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#328EFF26] md:mx-auto font-raleway text-gray-800">
+                <h1 className="text-3xl md:text-5xl font-bold text-center">Login Now!</h1>
                 <form onSubmit={handelLoginBtn} className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="Email" className="block font-semibold text-lg">Email</label>

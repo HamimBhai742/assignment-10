@@ -27,7 +27,7 @@ const MyCraft = () => {
         const yes = myCrafts.sort((a, b) => (a.customization < b.customization) ? 1 : (a.customization > b.customization) ? -1 : 0);
     }
     return (
-        <div>
+        <div className=' max-sm:mx-3 md:mx-5'>
             <div className="mt-5 flex justify-center">
                 <select value={selected} onChange={handelShortingBtn} className=" font-work-sans select border-none text-white select-bordered w-full max-w-[200px] font-semibold text-lg bg-[#23BE0A]">
                     <option disabled selected>Sort By</option>
@@ -36,7 +36,7 @@ const MyCraft = () => {
                 </select>
             </div>
 
-            <div className='grid grid-cols-3 gap-5 max-w-[1170px] mx-auto mt-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1170px] lg:mx-auto mt-16'>
                 {
                     myCrafts.map((craft, idx) => <MyCraftCard myCrafts={myCrafts} setMycrafts={setMycrafts} craft={craft} key={idx}></MyCraftCard>)
                 }

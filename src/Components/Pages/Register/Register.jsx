@@ -16,6 +16,8 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
         console.log(name, email, password, photo);
+        const user = { name, email, photo }
+        console.log(user);
         setError('')
         if (password.length < 6) {
             return setError('Password minimum 6 charecter')
@@ -28,6 +30,17 @@ const Register = () => {
                 updateProfile(res.user, {
                     displayName: name, photoURL: photo
                 })
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
                 Swal.fire({
                     title: "Register!",
                     text: "You have successfully register!",
@@ -46,13 +59,13 @@ const Register = () => {
         console.log(showPass);
     }
     return (
-        <div>
-            <div className="hero min-h-screen bg-[#328EFF26] max-w-[1170px] mx-auto font-raleway rounded-lg">
+        <div className="max-sm:mx-3 md:mx-5">
+            <div className="hero min-h-screen bg-[#328EFF26] max-w-[1170px]  lg:mx-auto font-raleway rounded-lg">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Register now!</h1>
+                        <h1 className="text-3xl md:text-5xl font-bold">Register now!</h1>
                     </div>
-                    <div className="card shrink-0 w-[600px] mt-5 shadow-2xl bg-base-100">
+                    <div className="card shrink-0 md:w-[600px] w-[360px] mt-5 shadow-xl bg-base-100">
                         <form className="card-body" onSubmit={handelRegisterBtn}>
                             <div className="form-control">
                                 <label className="label">
@@ -77,7 +90,7 @@ const Register = () => {
                                     <span className="label-text font-semibold text-lg">Password</span>
                                 </label>
                                 <input type={showPass ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
-                                <span className="absolute text-xl top-14 right-4" onClick={handelShowPassword}>{showPass? <FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>}</span>
+                                <span className="absolute text-xl top-14 right-4" onClick={handelShowPassword}>{showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
                             </div>
                             <p className="text-[red]">{error}</p>
                             <div className="form-control mt-6">

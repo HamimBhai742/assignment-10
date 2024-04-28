@@ -36,7 +36,7 @@ const MyCraftCard = ({ craft, myCrafts, setMycrafts }) => {
     }
     return (
         <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl font-inter rounded-xl">
+            <div className="card card-compact lg:w-96 bg-base-100 shadow-xl font-inter rounded-xl">
                 <figure><img src={craft.photo} alt="Shoes" className='h-[250px] w-full' /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{craft.itemName}</h2>

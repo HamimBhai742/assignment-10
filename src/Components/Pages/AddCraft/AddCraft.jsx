@@ -43,14 +43,14 @@ const AddCraft = () => {
             })
     }
     return (
-        <section className='max-w-[1170px] mx-auto  my-8'>
+        <section className='max-w-[1170px] lg:mx-auto  my-8 max-sm:mx-3 md:mx-5'>
 
-            <div className="p-6  bg-[#328EFF26] mt-5">
+            <div className="p-6  bg-[#328EFF26] mt-5 rounded-xl">
                 <form onSubmit={handelCraftAddBtn} noValidate="" action="" className="container flex flex-col mx-auto space-y-12">
                     <fieldset className="py-5 px-10">
 
                         <div className="text-center">
-                            <p className="font-rancho text-5xl text-[#374151]">Add New Craft Item</p>
+                            <p className="font-rancho text-3xl md:text-5xl text-[#374151]">Add New Craft Item</p>
                             {/* <p className="text-xs font-raleway max-w-[700px] mx-auto">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p> */}
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 mt-5 font-raleway">

@@ -9,7 +9,7 @@ const All_Art = () => {
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
-                    <thead className='text-xl'>
+                    <thead className='lg:text-xl'>
                         <tr>
                             <th>Sl No.</th>
                             <th>Item Name</th>
@@ -22,13 +22,13 @@ const All_Art = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            allArtsAndCrafts.map((craft, idx) => <tr className='text-lg' key={idx}>
+                            allArtsAndCrafts.map((craft, idx) => <tr className='lg:text-lg' key={idx}>
                                 <th>{idx + 1}</th>
                                 <td>{craft.itemName}</td>
                                 <td>{craft.subcategoryName}</td>
                                 <td>{craft.stockStatus}</td>
                                 <td>${craft.price}</td>
-                                <td><Link to={`/viewdetails/${craft._id}`} className='btn bg-violet-700 text-white text-lg hover:bg-violet-800 font-semibold'>View Details</Link></td>
+                                <td><Link to={`/viewdetails/${craft._id}`} className='btn bg-violet-700 text-white text-sm lg:text-lg hover:bg-violet-800 md:font-semibold'>View Details</Link></td>
                             </tr>)
                         }
 

@@ -17,8 +17,8 @@ const Footer = () => {
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-5 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3 font-inter">
-                        <h3 className="tracking-wide uppercase dark:text-gray-900 text-lg font-semibold">Textile Arts</h3>
-                        <ul className="space-y-1">
+                        <h3 className="tracking-wide uppercase max-sm:text-sm dark:text-gray-900 text-lg font-semibold">Textile Arts</h3>
+                        <ul className="space-y-1 max-sm:text-sm">
                             <li>
                                 <a rel="noopener noreferrer" href="#">Embroidery</a>
                             </li>
@@ -45,17 +45,17 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div> */}
-                    <div className="space-y-3 font-inter">
-                        <h3 className="uppercase text-lg dark:text-gray-900 font-semibold">Contact Us</h3>
+                    <div className="space-y-3 font-inter max-sm:-ml-4">
+                        <h3 className="uppercase text-lg dark:text-gray-900 font-semibold max-sm:text-sm">Contact Us</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a className='flex items-center gap-2 text-base' rel="noopener noreferrer" href="#"><span className='text-xl'><MdEmail></MdEmail></span> artisanalfabrics34@info.com</a>
+                                <a className='flex items-center gap-2 max-sm:text-sm text-base' rel="noopener noreferrer" href="#"><span className='text-xl'><MdEmail></MdEmail></span> artisanal34@info.com</a>
                             </li>
                             <li>
                                 <a className='flex items-center gap-2 text-base'  rel="noopener noreferrer" href="#"><span className='text-xl'><MdPhone></MdPhone></span>+0965374244</a>
                             </li>
                             <li>
-                                <a className='flex items-center gap-2 text-base w-72'  rel="noopener noreferrer" href="#"><span className='text-2xl'><MdLocationOn></MdLocationOn></span>286, West nakhalpara, Tejgaon, Dhaka-1208</a>
+                                <a className='flex items-center gap-2 max-sm:text-sm text-base md:w-72'  rel="noopener noreferrer" href="#"><span className='text-2xl'><MdLocationOn></MdLocationOn></span>286, West nakhalpara, Tejgaon, Dhaka-1208</a>
                             </li>
                         </ul>
                     </div>
