@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/allart',
-        element: <All_Art></All_Art>,
+        element: <PrivateRoute><All_Art></All_Art></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/addcraft')
       },
       {
@@ -57,8 +57,8 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
       },
       {
-        path:'/updatecraft/:id',
-        element:<UpdateCraft></UpdateCraft>,
+        path: '/updatecraft/:id',
+        element: <UpdateCraft></UpdateCraft>,
         loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
       }
     ]

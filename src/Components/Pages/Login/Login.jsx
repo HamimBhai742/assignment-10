@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const { LoginUser, user } = useContext(AuthContext)
@@ -51,6 +52,12 @@ const Login = () => {
                 console.log(error);
             })
     }
+
+    const [showPass, setShowPass] = useState(false)
+    const handelShowPassword = () => {
+        setShowPass(!showPass)
+        console.log(showPass);
+    }
     return (
         <div>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#328EFF26] mx-auto font-raleway text-gray-800">
@@ -60,12 +67,14 @@ const Login = () => {
                         <label htmlFor="Email" className="block font-semibold text-lg">Email</label>
                         <input type="email" name="email" id="Email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
-                    <div className="space-y-1 text-sm">
-                        <label htmlFor="password" className="block font-semibold text-lg">Password</label>
-                        <input type="password" name="password" id="Password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                    <div className="space-y-1 text-sm relative">
+                        <label htmlFor="Email" className="block font-semibold text-lg">Password</label>
+                        <input type={showPass ? 'text' : 'password'} name="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" required />
+                        <span className="absolute text-xl top-10 right-4" onClick={handelShowPassword}>{showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
                         <div className="flex justify-end text-xs dark:text-gray-600">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
+
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm text-white text-xl font-semibold bg-violet-600">Login</button>
                 </form>

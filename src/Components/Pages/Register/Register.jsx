@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const { creatNewUser } = useContext(AuthContext)
@@ -38,6 +39,12 @@ const Register = () => {
                 console.log(error);
             })
     }
+
+    const [showPass, setShowPass] = useState(false)
+    const handelShowPassword = () => {
+        setShowPass(!showPass)
+        console.log(showPass);
+    }
     return (
         <div>
             <div className="hero min-h-screen bg-[#328EFF26] max-w-[1170px] mx-auto font-raleway rounded-lg">
@@ -65,11 +72,12 @@ const Register = () => {
                                 </label>
                                 <input type="email" name="email" placeholder="Your Email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text font-semibold text-lg">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                                <input type={showPass ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
+                                <span className="absolute text-xl top-14 right-4" onClick={handelShowPassword}>{showPass? <FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>}</span>
                             </div>
                             <p className="text-[red]">{error}</p>
                             <div className="form-control mt-6">

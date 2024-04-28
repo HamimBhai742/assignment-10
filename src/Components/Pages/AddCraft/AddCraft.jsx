@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 const AddCraft = () => {
-    const {user}=useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     // console.log(user);
     // console.log(user.email);
     const handelCraftAddBtn = (e) => {
@@ -51,12 +51,12 @@ const AddCraft = () => {
 
                         <div className="text-center">
                             <p className="font-rancho text-5xl text-[#374151]">Add New Craft Item</p>
-                            <p className="text-xs font-raleway max-w-[700px] mx-auto">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                            {/* <p className="text-xs font-raleway max-w-[700px] mx-auto">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p> */}
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 mt-5 font-raleway">
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="firstname" className="text-xl font-semibold">Name</label>
-                                <input id="firstname" defaultValue={user?.displayName}  type="text" disabled placeholder="Enter your name" className="w-full border-2 border-gray-500 pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='name' />
+                                <input id="firstname" defaultValue={user?.displayName} type="text" disabled placeholder="Enter your name" className="w-full border-2 border-gray-500 pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='name' />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="lastname" className="text-xl font-semibold">Email</label>
@@ -75,8 +75,8 @@ const AddCraft = () => {
                                 <input id="firstname" type="number" placeholder="Enter Price" className="w-full pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='price' />
                             </div>
                             <div className="col-span-full sm:col-span-3">
-                                <label htmlFor="lastname" className="text-xl font-semibold">Short Description</label>
-                                <input id="lastname" type="text" placeholder="Enter short description" className="w-full pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='description' />
+                                <label htmlFor="lastname" className="text-xl font-semibold">Photo URL</label>
+                                <input id="lastname" type="url" placeholder="Enter photo URL" className="w-full pl-3 h-12  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='photo' />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="firstname" className="text-xl font-semibold">Processing Time</label>
@@ -102,11 +102,15 @@ const AddCraft = () => {
 
                                 </div>
                             </div>
-                            <div className="col-span-full">
+                            {/* <div className="col-span-full">
                                 <label htmlFor="address" className="text-xl font-semibold">Photo</label>
                                 <input id="address" type="url" placeholder="Enter photo URL" className="w-full h-12   pl-3 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" name='photo' />
+                            </div> */}
+                            <div className="col-span-full">
+                                <label htmlFor="address" className="text-xl font-semibold">Short Description</label>
+                                {/* <input id="address" type="url" placeholder="Enter photo URL" className="w-full h-12  pl-3 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" defaultValue={loderCraft?.photo} name='photo' /> */}
+                                <textarea placeholder="Enter short description..." id="description" name="description" rows="4" cols="50" className="w-full mt-2 pt-1   pl-3 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"></textarea>
                             </div>
-
                             <div className="col-span-full mt-3">
                                 <input id="address" type="submit" value="Add" className="w-full text-2xl font-rachno h-12 btn bg-[#328EFF] border-2 border-[#331A15]" />
                             </div>

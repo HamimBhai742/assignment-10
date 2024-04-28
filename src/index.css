@@ -27,6 +27,16 @@
   font-weight: 600;
 }
 
+body .dark{
+  color: white;
+}
+/* 
+.dark { */
+  /* Styles for dark mode */
+  /* background-color: #1f1f1f;
+  color: #ffffff;
+} */
+
 /* #app { height: 100% }
 html, */
 /* body {

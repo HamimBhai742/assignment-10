@@ -36,7 +36,7 @@ const MyCraft = () => {
                 </select>
             </div>
 
-            <div className='grid grid-cols-3 max-w-[1170px] mx-auto mt-16'>
+            <div className='grid grid-cols-3 gap-5 max-w-[1170px] mx-auto mt-16'>
                 {
                     myCrafts.map((craft, idx) => <MyCraftCard myCrafts={myCrafts} setMycrafts={setMycrafts} craft={craft} key={idx}></MyCraftCard>)
                 }
