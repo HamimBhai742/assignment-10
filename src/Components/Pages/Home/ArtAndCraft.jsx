@@ -9,7 +9,7 @@ const ArtAndCraft = ({ artandcrft }) => {
 
     const handelCLickSubCategory = (subcategoryName) => {
         console.log(subcategoryName);
-        fetch(`http://localhost:5000/craftarts/${subcategoryName}`)
+        fetch(`https://assignment-10-server-side-ashen.vercel.app/craftarts/${subcategoryName}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
