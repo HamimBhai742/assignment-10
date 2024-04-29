@@ -63,9 +63,9 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`https://assignment-10-server-side-ashen.vercel.app/addcraft/${params.id}`)
       },
       {
-        path:'/craftarts/:name',
-        element:<ArtCraftData></ArtCraftData>,
-        loader:({params})=>fetch(`https://assignment-10-server-side-ashen.vercel.app/craftarts/${params.name}`)
+        path: '/craftarts/:name',
+        element: <ArtCraftData></ArtCraftData>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-ashen.vercel.app/craftarts/${params.name}`)
       }
     ]
   },
