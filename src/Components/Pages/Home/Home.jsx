@@ -15,6 +15,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { useLoaderData } from 'react-router-dom';
 import CraftCard from './CraftCard';
+import ArtAndCraft from './ArtAndCraft';
 
 
 const Home = () => {
@@ -46,6 +47,15 @@ const Home = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-5'>
                         {
                             loderCraft.map((craft, idx) => <CraftCard key={idx} craft={craft}></CraftCard>)
+                        }
+                    </div>
+                </div>
+
+                <div className='mt-8'>
+                    <h3 className='text-4xl  text-center font-bold font-raleway'>Art & Craft </h3>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-5'>
+                        {
+                            loderCraft.map((artandcrft,idx) => <ArtAndCraft key={idx} artandcrft={artandcrft}></ArtAndCraft>)
                         }
                     </div>
                 </div>

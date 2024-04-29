@@ -17,6 +17,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Error from './Components/Pages/Error/Error';
 import ViewDetails from './Components/Pages/Viewdetails/ViewDetails';
 import UpdateCraft from './Components/Pages/Update/UpdateCraft';
+import ArtCraftData from './Components/Pages/Home/ArtCraftData';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
         path: '/updatecraft/:id',
         element: <UpdateCraft></UpdateCraft>,
         loader: ({ params }) => fetch(`https://assignment-10-server-side-ashen.vercel.app/addcraft/${params.id}`)
+      },
+      {
+        path:'/craftarts/:name',
+        element:<ArtCraftData></ArtCraftData>,
+        loader:({params})=>fetch(`http://localhost:5000/craftarts/${params.name}`)
       }
     ]
   },

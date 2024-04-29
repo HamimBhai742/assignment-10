@@ -27,10 +27,16 @@
   font-weight: 600;
 }
 
+.hh:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+
+}
+
 /* 
 .dark { */
-  /* Styles for dark mode */
-  /* background-color: #1f1f1f;
+/* Styles for dark mode */
+/* background-color: #1f1f1f;
   color: #ffffff;
 } */
 
