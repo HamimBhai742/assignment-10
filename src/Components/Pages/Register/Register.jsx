@@ -30,7 +30,7 @@ const Register = () => {
                 updateProfile(res.user, {
                     displayName: name, photoURL: photo
                 })
-                fetch('http://localhost:5000/users', {
+                fetch('https://assignment-10-server-side-ashen.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -59,7 +59,7 @@ const Register = () => {
         console.log(showPass);
     }
     return (
-        <div className="max-sm:mx-3 md:mx-5">
+        <div className="max-sm:mx-3 md:mx-5 mt-5">
             <div className="hero min-h-screen bg-[#328EFF26] max-w-[1170px]  lg:mx-auto font-raleway rounded-lg">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
@@ -90,7 +90,7 @@ const Register = () => {
                                     <span className="label-text font-semibold text-lg">Password</span>
                                 </label>
                                 <input type={showPass ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
-                                <span className="absolute text-xl top-14 right-4" onClick={handelShowPassword}>{showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
+                                <span className="absolute text-xl top-[60px] right-4" onClick={handelShowPassword}>{showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
                             </div>
                             <p className="text-[red]">{error}</p>
                             <div className="form-control mt-6">

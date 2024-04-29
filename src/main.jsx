@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/addcraft')
+        loader: () => fetch('https://assignment-10-server-side-ashen.vercel.app/addcraft')
       },
       {
         path: '/register',
@@ -44,22 +44,22 @@ const router = createBrowserRouter([
       {
         path: '/allart',
         element: <PrivateRoute><All_Art></All_Art></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/addcraft')
+        loader: () => fetch('https://assignment-10-server-side-ashen.vercel.app/addcraft')
       },
       {
         path: '/myart',
         element: <PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/addcraft')
+        loader: () => fetch('https://assignment-10-server-side-ashen.vercel.app/addcraft')
       },
       {
         path: '/viewdetails/:id',
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-ashen.vercel.app/addcraft/${params.id}`)
       },
       {
         path: '/updatecraft/:id',
         element: <UpdateCraft></UpdateCraft>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-ashen.vercel.app/addcraft/${params.id}`)
       }
     ]
   },

@@ -22,7 +22,7 @@ const AddCraft = () => {
         const stockStatus = form.stock.value
         const addItem = { name, email, itemName, subcategoryName, price, description, time, rating, photo, customization, stockStatus }
         console.log(addItem);
-        fetch('http://localhost:5000/addcraft', {
+        fetch('https://assignment-10-server-side-ashen.vercel.app/addcraft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

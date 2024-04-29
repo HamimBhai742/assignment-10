@@ -22,7 +22,7 @@ const MyCraftCard = ({ craft, myCrafts, setMycrafts }) => {
                     text: "Your file has been deleted.",
                     icon: "success"
                 });
-                fetch(`http://localhost:5000/addcraft/${id}`, {
+                fetch(`https://assignment-10-server-side-ashen.vercel.app/addcraft/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

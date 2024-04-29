@@ -91,7 +91,7 @@ const NavBar = () => {
                         </span>
                     </label>
                     <input type="checkbox" onChange={hi} value="synthwave" className="toggle theme-controller them"/> */}
-                    {user ? <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="top"><img className='w-16 max-sm:hidden' src="/public/Screenshot_60-removebg-preview.png" alt="" /> </a> : <Link to='/register' className="btn bg-[#59C6D2] text-white">Register</Link>}
+                    {user ? <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="top"><img className='w-16 h-16 max-sm:hidden rounded-full' src={user.photoURL} alt="" /> </a> : <Link to='/register' className="btn bg-[#59C6D2] text-white">Register</Link>}
                     {user ? <button onClick={handelLogOutBtn} className="btn bg-[#23BE0A] text-white">Logout</button> : <Link to='/login' className="btn bg-[#23BE0A] text-white">Login</Link>}
                 </div>
             </div>

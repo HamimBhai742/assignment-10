@@ -18,7 +18,7 @@ const UpdateCraft = () => {
         const stockStatus = form.stock.value
         const updateItem = { itemName, subcategoryName, price, description, time, rating, photo, customization, stockStatus }
         console.log(updateItem);
-        fetch(`http://localhost:5000/updatecraft/${loderCraft._id}`, {
+        fetch(`https://assignment-10-server-side-ashen.vercel.app/updatecraft/${loderCraft._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
