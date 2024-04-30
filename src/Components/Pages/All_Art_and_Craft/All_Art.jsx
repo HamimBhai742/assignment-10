@@ -19,7 +19,7 @@ const All_Art = () => {
                             <th>Details</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         {/* row 1 */}
                         {
                             allArtsAndCrafts.map((craft, idx) => <tr className='lg:text-lg' key={idx}>
@@ -31,7 +31,6 @@ const All_Art = () => {
                                 <td><Link to={`/viewdetails/${craft._id}`} className='btn bg-violet-700 text-white text-sm lg:text-lg hover:bg-violet-800 md:font-semibold'>View Details</Link></td>
                             </tr>)
                         }
-
                     </tbody>
                 </table>
             </div>

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import MyCraftCard from './MyCraftCard';
+import { Fade } from 'react-awesome-reveal';
 export const AssetContext = createContext(null)
 
 const MyCraft = () => {
@@ -36,11 +37,13 @@ const MyCraft = () => {
                 </select>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1170px] lg:mx-auto mt-16'>
-                {
-                    myCrafts.map((craft, idx) => <MyCraftCard myCrafts={myCrafts} setMycrafts={setMycrafts} craft={craft} key={idx}></MyCraftCard>)
-                }
-            </div>
+            <Fade direction='top' damping={0.1}>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1170px] lg:mx-auto mt-16'>
+                    {
+                        myCrafts.map((craft, idx) => <MyCraftCard myCrafts={myCrafts} setMycrafts={setMycrafts} craft={craft} key={idx}></MyCraftCard>)
+                    }
+                </div>
+            </Fade>
         </div>
     );
 };
