@@ -50,6 +50,11 @@ const Register = () => {
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    title: "Opps!",
+                    text: "This email already create account!",
+                    icon: "error"
+                });
             })
     }
 

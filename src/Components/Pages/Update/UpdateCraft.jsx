@@ -35,6 +35,7 @@ const UpdateCraft = () => {
                         icon: "success"
                     });
                 }
+                form.reset()
             })
     }
     return (
