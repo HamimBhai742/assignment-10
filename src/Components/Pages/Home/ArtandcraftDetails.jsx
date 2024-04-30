@@ -6,13 +6,13 @@ const ArtandcraftDetails = ({ sub }) => {
     console.log(sub);
     // console.log(subcategoryName, itemName, photo, description);
     return (
-        <div className='max-w-[1170px] mx-auto '>
-            <div className="card card-side bg-[#328EFF26] shadow-xl font-work-sans">
-                <figure><img className='w-96 h-[360px]' src={photo} alt="Movie" /></figure>
+        <div className='max-w-[1170px] md:mx-auto mx-3'>
+            <div className="card lg:card-side bg-[#328EFF26] shadow-xl font-work-sans">
+                <figure><img className='w-96 md:h-[360px] max-sm:h-[250px] max-sm:mt-5 max-sm:rounded-xl' src={photo} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-xl">{itemName}</h2>
                     <h4 className='text-lg font-semibold text-gray-600'>#{subcategoryName}</h4>
-                    <p className='w-[550px] font-inter'>{description}</p>
+                    <p className='md:w-[550px] font-inter'>{description}</p>
                     <div>
                         <div>
                             <p className='text-lg'><span className='font-semibold'>Price:</span> ${price}</p>

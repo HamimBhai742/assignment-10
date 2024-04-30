@@ -63,7 +63,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className='flex items-center'>
-                        <img src="/Screenshot_60-removebg-preview.png" alt="" className='w-16 flex max-sm:hidden' />
+                        <img src="/logo.png" alt="" className='w-16 flex max-sm:hidden' />
                         <a className="btn btn-ghost md:text-4xl font-rancho text-2xl">Artisanal Fabrics</a>
                     </div>
                 </div>

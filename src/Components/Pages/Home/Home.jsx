@@ -47,6 +47,8 @@ const Home = () => {
         onLoopDone: () => console.log(`loop completed after 3 runs.`)
     })
 
+    console.log();
+
     return (
         <div>
             <Helmet>
@@ -60,7 +62,7 @@ const Home = () => {
                             <div className="hero-overlay bg-opacity-40"></div>
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">  <span className='font-raleway'>{text}</span>
+                                    <h1 className="mb-5 text-3xl md:text-5xl font-bold">  <span className='font-raleway'>{text}</span>
                                         <Cursor cursorColor='purple' /></h1>
 
                                     <button className="p-3 rounded-xl border-2 border-violet-600 text-white bg-none font-work-sans text-lg font-semibold">Explore</button>
@@ -73,7 +75,7 @@ const Home = () => {
                             <div className="hero-overlay bg-opacity-60"></div>
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">  <span className='font-raleway'>{text2}</span>
+                                    <h1 className="mb-5 text-3xl md:text-5xl font-bold">  <span className='font-raleway'>{text2}</span>
                                         <Cursor cursorColor='purple' /></h1>
 
                                     <button className="p-3 rounded-xl border-2 border-violet-600 text-white bg-none font-work-sans text-lg font-semibold">Learn more</button>
@@ -86,7 +88,7 @@ const Home = () => {
                             <div className="hero-overlay bg-opacity-50"></div>
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">  <span className='font-raleway'>{text3}</span>
+                                    <h1 className="mb-5 text-3xl md:text-5xl font-bold">  <span className='font-raleway'>{text3}</span>
                                         <Cursor cursorColor='purple' /></h1>
 
                                     <button className="p-3 rounded-xl border-2 border-violet-600 text-white bg-none font-work-sans text-lg font-semibold">Explore Now</button>
@@ -100,7 +102,7 @@ const Home = () => {
                             <div className="hero-overlay bg-opacity-40"></div>
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">  <span className='font-raleway'>{text4}</span>
+                                    <h1 className="mb-5 text-3xl md:text-5xl font-bold">  <span className='font-raleway'>{text4}</span>
                                         <Cursor cursorColor='purple' /></h1>
 
                                     <button className="p-3 rounded-xl border-2 border-violet-600 text-white bg-none font-work-sans text-lg font-semibold">SUBMIT INQUIRY</button>
@@ -113,7 +115,7 @@ const Home = () => {
                             <div className="hero-overlay bg-opacity-40"></div>
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">  <span className='font-raleway'>{text5}</span>
+                                    <h1 className="mb-5 text-3xl md:text-5xl font-bold">  <span className='font-raleway'>{text5}</span>
                                         <Cursor cursorColor='purple' /></h1>
 
                                     <button className="p-3 rounded-xl border-2 border-violet-600 text-white bg-none font-work-sans text-lg font-semibold">Learn more</button>
@@ -141,11 +143,29 @@ const Home = () => {
                         }
                     </div>
                 </div>
+                <div className='mt-10'>
+                    <h3 className='text-4xl  text-center font-bold font-raleway'>Arts & Craft Clloection</h3>
+                </div>
+                <div className='grid md:grid-cols-12 grid-cols-6 mt-5'>
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/sl1 (1).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/sl1 (3).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/sl1 (4).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/sl1 (6).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (10).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (11).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (12).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (13).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (14).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (15).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (2).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (3).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (4).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (5).jpg" alt="" />
+                    <img className='md:col-span-4 col-span-3 h-[300px] zoom' src="/ssll (6).jpg" alt="" />
+                </div>
             </div>
 
-            <div className='App'>
 
-            </div>
             {/* <div>
                 <Fade cascade damping={0.1}>
                     <p>I enter first...</p>

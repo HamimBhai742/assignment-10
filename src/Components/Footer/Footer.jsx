@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="lg:w-1/3">
                     <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
                         <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-                           <img src="/public/Screenshot_60-removebg-preview.png" alt="" />
+                           <img src="/logo.png" alt="" />
                         </div>
                         <span className="self-center font-rancho text-4xl font-semibold">Artisanal Fabrics</span>
                     </a>

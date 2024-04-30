@@ -12,10 +12,10 @@ const ViewDetails = () => {
     console.log(user);
     console.log(user.photoURL);
     return (
-        <div className='flex max-w-[1170px] mx-auto gap-7 items-center mt-8'>
+        <div className='flex flex-col lg:flex-row max-w-[1170px] md:mx-auto gap-7 items-center mt-8 mx-3'>
             <Fade cascade duration={2000} damping={0.2}>
                 <div>
-                    <img className='w-[650px] h-[500px] rounded-lg' src={craft.photo} alt="" />
+                    <img className='w-[650px] md:h-[500px] rounded-lg' src={craft.photo} alt="" />
                 </div>
                 <div>
                     <div className='flex gap-3 items-center mb-5'>
