@@ -1,6 +1,8 @@
 # Artisanal Fabrics
 
 ## 🔗 https://carf-and-art.web.app/
+## Overview
+Any user can add, delete and update art and craft items on this website. If any other user has added an art and craft item, then you can see the details. To do this, the user must be logged in to the website.
 
 ## Fetures 
 
