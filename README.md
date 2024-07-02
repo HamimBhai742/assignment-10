@@ -4,24 +4,30 @@
 
 ## Fetures 
 
-- All Art and Craft 
-- Add Craft Items
-- Update Craft Items
-- Delete Craft Items
-- My Craft Items
-- Arts And Craft Items
-- SubCategory Details
-- Footer 
+- #### Authentication: 
+  Include login and register feature for  authentication
+- #### Responsive Design: 
+  The  website looks and functions well on all devices, including desktops, tablets, and smartphones.
+- #### Sort:
+  My art & craft list page include sort features
 
-## Category 
-- ###  Textile Arts
+## Clone System
+##### 1. copy remote URL
+##### 2. open command line
+##### 3. type cd dir name
+##### 4. type git clone paste remote URL
+##### 5. type code . open vs code 
+##### 5. type npm run dev 
 
-
+## Tecnology
+- HTML, CSS, JavaScript
+- React
+- Node.js
+- Git, GitHub
+- jwt
 ## Package 
 - React-tooltip
 - React-awesome-reveal
 - React-simple-typewriter
-
-
-
-
+- aos animation
+- animate css
